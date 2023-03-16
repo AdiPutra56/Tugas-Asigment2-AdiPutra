@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*mengatur Body*/
+body{
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.logo{
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  font-style:oblique;
+}
+/*Mengatur navbar*/
+nav{
+    display: flex;
+    background-color: aquamarine;
+    justify-content: space-around;
+    padding: 20px 0;
+    height: 80px;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.904);
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 40%;
+    align-items: center;
+}
+
+nav ul li a {
+    color: blueviolet;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover{
+    color: powderblue;
+}
+/*mengatur responsif Mobile*/
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    background-color: aquamarine;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -6px;
+    top: -0px;
+    z-index:2;
+    cursor: pointer;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #2c2828;
+    border-radius: 1px;
+    transition: all 1s;
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: #2c2828;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: #2c2828;
+    transform: rotate(-45deg)translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+/*responsif*/
+@media screen and (max-width: 768px) {
+    nav ul{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        justify-content: space-evenly;
+        z-index: -1;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(16, 17, 17);
+        width: 80%;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+/*batas navbar
+  
+
+/* Mengatur heading */
+
+  .heading {
+    background-color: rgba(36, 63, 7, 0.3);
+    margin-top: 10px;
+    height: 190px;
+    border: 50px solid white;
+    display: flex;
+    align-items: center;
+  }
+
+/* Mengatur logo Heading */
+.logo-heading {
+    width: 150px;
+    height: auto;
+    margin-left: 25px;
+    border-radius: 50%;
+  }
+  /* Mengatur tulisan Heading */
+  .h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .h1 h2 {
+    margin: 0;
+  }
+/* Mengatur button Heading */
+  .button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .kontak, .resume {
+    background-color: #3eacac;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+  }
+
+  .kontak:hover , .resume:hover {
+    background-color: #fff; 
+    color: #03001C; 
+    cursor: pointer; 
+  }
+/* Mengatur data Heading */
+  .biodata {
+   color: #fff;
+   margin-left: 100px;
+   display: block;
+   font-size: 20px;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold;
+   margin-bottom: 30px;
+  }
+
+  .biodata-isi {
+   color: #fff;
+   display: block;
+   font-size: 20px;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold;
+   margin-bottom: 30px;
+  }
+
+   /* Mengatur Form */
+   .form {
+    max-width: 1250px; 
+    margin: 0 auto;
+  }
+  
+  .label, input, textarea {
+    display: block;
+    margin-bottom: 10px; 
+  }
+  
+  .input, textarea {
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    width: 100%; 
+    box-sizing: border-box;
+  }
+  
+  .button-form {
+    background-color: #3b803d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 1250px;
+    font-size: 20px;
+  }
+  
+  .button-form:hover {
+    background-color: #276829;
+  }
+
+  @media screen and (max-width: 768px) {
+    .heading, .biodata, .biodata-isi{
+        transform: scale(0);
+    }
+}
